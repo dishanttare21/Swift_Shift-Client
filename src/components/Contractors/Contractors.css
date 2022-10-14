@@ -1,0 +1,9 @@
+.contractors{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: hsl(0, 0%, 84%);
+    padding: 1em;
+    gap: 1em;
+    width: 80%;
+    margin: auto
+}

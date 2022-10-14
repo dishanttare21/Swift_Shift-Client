@@ -1,0 +1,8 @@
+.shiftDetails{
+    border: 2px solid black;
+    width: 80%;
+    margin: 1em auto;
+}
+.shiftDetails input{
+    display: block;
+}

@@ -2,23 +2,39 @@
     /* width: 300; */
     /* aspect-ratio: 1; */
     border: 0.5px solid hsl(0, 0%, 97%);
+    
     background: hsl(0, 0%, 97%);
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     border-radius: 5px;
     padding: 1em;
 }
+.contractor >  div{
+    display: flex;
+    align-items: center;
+    gap: 0.3em;
+    /* border: 2px solid red; */
+    margin-bottom: 1em;
+}
 .contractor-name, .contractor-pricing, .contractor-rating{
     display: block;
+}
+.contractor-image{
+    width: 45px;
+    border-radius: 100vw;
 }
 .contractor-name{
     font-weight: 600;
     font-size: 1.1rem;
-    margin-bottom: 1em;
+    /* margin-bottom: 1em; */
 }
 .key, .value{
     display: inline-block;
-    color: #303030;
+    color: rgb(75, 75, 75) !important;
+
     font-size: 0.95rem;
+}
+.key{
+    color: #E55A21 !important;
 }
 .view-btn {
     border: 1px solid hsl(0, 0%, 85%);
@@ -31,4 +47,21 @@
     color: #fff;
     border-radius: 5px;
     font-family: inherit;
+}
+.contractor-details{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    /* border: 2px solid red; */
+}
+.contractor-details > *{
+    /* border: 2px solid red; */
+}
+.contractor-details span{}
+.available{
+    display: block;
+    width: 80%;
+    margin: auto;
+    font-size: 1.2rem;
+    /* border: 2px solid red; */
 }

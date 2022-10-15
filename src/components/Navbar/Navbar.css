@@ -1,11 +1,16 @@
 .navbar{
-    background: #162D3D;
-    color: #fff;
+    background: #fff;
+    color: #162D3D;
     /* border: 2px solid red; */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
 }
 .navbar > * {
     /* border: 2px solid red; */
@@ -15,8 +20,11 @@
     align-items: center;
 }
 .title{
-    font-weight: bold;
+    font-weight: 500;
+    font-style: italic;
     margin-left: 1em;
+    color: #162D3D;
+    font-size: 1.4rem;
 }
 .logo{
     width: 40px;
@@ -58,7 +66,7 @@
     margin: 1em auto;
     padding: 0.5em;
     cursor: pointer;
-    background: rgb(235, 98, 91);
+    background: #eb625b;
     color: #fff;
     border-radius: 5px;
     font-family: inherit;

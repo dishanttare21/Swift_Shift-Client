@@ -1,4 +1,5 @@
 import ShiftDetails from "../../components/ShiftDetails/ShiftDetails"
+import './Shift.css';
 
 const Shift = () => {
   return (

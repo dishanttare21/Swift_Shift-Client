@@ -4,6 +4,7 @@
     width: 100%;
     margin: 0;
     padding: 5em 0;
+    min-height: 90vh;
 }
 .shiftDetails form{
     width: 50%;

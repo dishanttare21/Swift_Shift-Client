@@ -5,6 +5,8 @@ import './Contractors.css'
 const Contractors = (contractors) => {
     console.log(typeof(contractors),Object.values(contractors))
   return (
+    <>
+    <span className='available'>Available Contractors</span>
     <div className="contractors">
         <Contractor name={'STS movers and packers'} pricing={8} rating={4} />
         <Contractor name={'ABC Movers'} pricing={12} rating={5} />
@@ -16,6 +18,7 @@ const Contractors = (contractors) => {
         <Contractor name={contractor.google_id} />
        ))}  */}
     </div>
+    </>
   )
 }
 

@@ -5,7 +5,7 @@ import axios from 'axios'
 const Navbar = () => {
 
     const login = async() => {
-        const res = await axios.post('/login')
+        const res = await axios.post('/login', {})
         const data = res.json();
         console.log(data)
     }
@@ -13,7 +13,8 @@ const Navbar = () => {
   return (
     <nav className="navbar">
         <div className="navbar-left">
-            <span className='title'>Swift Shift</span>
+            <img src="/assets/images/SS.png" alt="" className='logo' />
+            {/* <span className='title'>Swift Shift</span> */}
         </div>
 
         <div className="navbar-center">
@@ -21,6 +22,7 @@ const Navbar = () => {
                <li className="navbar-link">Home</li>
                <li className="navbar-link">Services</li>
                <li className="navbar-link">Contact</li>
+               <li className="navbar-link">About</li>
             </ul>
         </div>
 

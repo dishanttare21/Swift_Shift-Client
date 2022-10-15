@@ -11,6 +11,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+
+import Homepage from './pages/Homepage/Homepage';
+
 function App() {
   //TODO remove useless o.p
   console.log(import.meta.env.google_client_id)
@@ -20,8 +23,8 @@ function App() {
       <Navbar />
       <Routes location={location} key={location.pathname}>
             {/* <Route path="/" element={user ? <Home /> : <Login />} /> */}
-            <Route path="/" element={<ShiftDetails />} />
             <Route path="/login" element={<GoogleSignIn/>} />
+            <Route path="/" element={<Homepage />} />
             {/* <Route path="/profile/:userId" element={user ? <Profile /> : <Login />} /> */}
             <Route path='*' element={<ErrorPage />} />
             <Route path='/pageNotFound' element={<ErrorPage />} />

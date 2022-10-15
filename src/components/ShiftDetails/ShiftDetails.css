@@ -1,8 +1,38 @@
 .shiftDetails{
-    border: 2px solid black;
+    border: 2px solid rgb(215, 215, 215);
     width: 80%;
     margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+}
+.shiftDetails label, .shiftDetails input{
+    width: 40%;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    margin: auto
 }
 .shiftDetails input{
     display: block;
+    border: 1px solid hsl(0, 0%, 85%);
+    border-radius: 5px;
+    padding: 1em;
+    transition: all 300ms ease;
+    outline: none;
+    
+}
+
+.save-btn {
+    border: 1px solid hsl(0, 0%, 85%);
+    width: 40%;
+    margin: 1em auto;
+    padding: 1em;
+    cursor: pointer;
+    background: rgb(42, 149, 255);
+    color: #fff;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+.shiftDetails input:hover{
+    transform: scale(1.01);
 }

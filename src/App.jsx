@@ -11,10 +11,27 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import { loginCall } from './apiCalls';
+import { useEffect } from 'react';
+import { AuthContext } from './context/AuthContext';
 import Homepage from './pages/Homepage/Homepage';
+import { useContext } from 'react';
 
 function App() {
+  const {user, dispatch} = useContext(AuthContext)
+  //If app gets reloaded, repopulate contexts:
+  useEffect(()=>{
+    if(localStorage.getItem('credential')){
+      const userCredentials ={}
+      userCredentials['name'] = localStorage.getItem('name')
+      userCredentials['email'] = localStorage.getItem('email')
+      userCredentials['credential'] = localStorage.getItem('credential')
+      userCredentials['picture'] = localStorage.getItem('picture')
+      userCredentials['sub'] = localStorage.getItem('sub')
+      loginCall(userCredentials,dispatch)
+    }
+    
+  },[])
   //TODO remove useless o.p
   console.log(import.meta.env.google_client_id)
   return (

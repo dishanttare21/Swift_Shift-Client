@@ -8,7 +8,7 @@ const GoogleSignIn = ()=>{
     const {user,dispatch} = useContext(AuthContext)
     
     const logout = ()=>{
-        googleLogout()
+        googleLogout()//https://accounts.google.com/Logout?ec=GAdAwAE
         logoutCall(dispatch)
     }
 

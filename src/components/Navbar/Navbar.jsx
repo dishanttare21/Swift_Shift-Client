@@ -1,13 +1,20 @@
 import './Navbar.css'
+import jwt_decode from "jwt-decode"
+import { loginCall,logoutCall } from '../../apiCalls';
 import { gapi } from 'gapi-script';
 import { loadAuth2, loadAuth2WithProps, loadClientAuth2 } from 'gapi-script';
+import { useContext } from 'react';
+import { GoogleLogin } from '@react-oauth/google'
+import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios'
-const Navbar = () => {
 
-    const login = async() => {
-        const res = await axios.post('/login', {})
-        const data = res.json();
-        console.log(data)
+const Navbar = () => {
+    const {user,dispatch} = useContext(AuthContext)
+    console.log(user)
+    const logout = ()=>{
+        //https://accounts.google.com/Logout?ec=GAdAwAE
+        logoutCall(dispatch)
+        window.open('https://accounts.google.com/Logout')
     }
 
   return (
@@ -27,7 +34,24 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-right">
-            <button onClick={login}>Login</button>
+            {user == null ?<GoogleLogin
+                onSuccess={credentialResponse => {
+                var decoded = jwt_decode(credentialResponse.credential)
+                console.log(decoded)
+                loginCall({
+                    name: decoded.name,
+                    email:decoded.email,
+                    credential: credentialResponse.credential,
+                    picture: decoded.picture,
+                    sub: decoded.sub
+                },dispatch)
+            }}
+            onError={() => {
+                console.log('Login Failed');
+            }}/> :
+
+            <button className="logout-btn" onClick={logout}>Logout</button>
+        }
         </div>
     </nav>
   )

@@ -3,12 +3,18 @@ import Contractors from '../Contractors/Contractors'
 import { useRef } from 'react'
 import axios from 'axios';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const ShiftDetails = () => {
   const source = useRef();
   const destination = useRef(); 
   const data = [];
   const [contractors, setContractors] = useState([])
+
+  const [submitted, setSubmitted] = useState(false);
+
+  const {user} = useContext(AuthContext)
 //   setContractors({})
 //   console.log(typeof(contractors))
   /*
@@ -39,11 +45,14 @@ const ShiftDetails = () => {
     e.preventDefault()
 
     try {
+        await axios.put('http://localhost:5000/users/updateCity', {homeCity: source.current.value, destCity: destination.current.value, credential: user?.credential})
+
         const res = await axios.post('http://localhost:5000/contractors/matchedCriteria', {homeCity: source.current.value, destCity: destination.current.value})
         const data = await res.data.contractors;
         // console.log(data)
         setContractors(data)
         console.log(contractors)
+        setSubmitted(true)
     } catch (error) {
         console.log(error)
     }
@@ -51,14 +60,20 @@ const ShiftDetails = () => {
   return (
     <>
     <form action="" className="shiftDetails" onSubmit={handleSubmit} >
-        <label htmlFor="source">Source</label>
-        <input type="text" name='source' ref={source} />
-        <label htmlFor="destination">Destination</label>
-        <input type="text" name='destination' ref={destination} />
+        <div>
+        <label htmlFor="source">Source City</label>
+        <input type="text" name='source' ref={source} required />
+        </div>
+        <div>
+        <label htmlFor="destination">Destination City</label>
+        <input type="text" name='destination' ref={destination} required />
+        </div>
         <button className='save-btn'>Save</button>
     </form>
 
-    <Contractors contractors={contractors} />
+    {submitted && (
+      <Contractors contractors={contractors} />
+    )}
     </>
   )
 }

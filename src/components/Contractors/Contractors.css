@@ -1,10 +1,11 @@
 .contractors{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color: hsl(0, 0%, 95%);
+    background-color: #253c52;
     padding: 1em;
     gap: 1em;
     width: 80%;
-    margin: auto
+    margin: auto;
+    color: #253c52;
 }
 

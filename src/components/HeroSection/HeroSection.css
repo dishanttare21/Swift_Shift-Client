@@ -54,9 +54,10 @@
     display: grid;
     background: rgb(63,94,251);
     background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
-    background-image: url(https://images.pexels.com/photos/7464493/pexels-photo-7464493.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-image: url(https://images.unsplash.com/photo-1609522886437-27a610fbe81d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
     background-repeat:inherit;
-    min-height: 70vh;
+    min-height: 60vh;
+    position: relative;
   }
   
   .hero1{
@@ -66,15 +67,34 @@
     align-items: center;
     text-align: center;
     animation-iteration-count: 2;
-    background-color:rgb(44, 109, 175);
-    color:#ADEFD1FF;
+    background-color: #D2D0D5;
+    color: #162D3D;
     font-size: 3.5rem;
-    /* border: 2px solid red; */
+    border: 2px solid #162D3D;
     margin: auto;
     margin-right: 36%;
     margin-bottom: 30%;
-    margin-top: 1%;
+    margin-top: 2%;
     padding: 0.85em;
     transform: skew(-15deg);
     /* border-radius: 5px; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+
+  }
+  .start-btn{
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    color: #fff;
+    background: #2C6DAF;
+    border: none;
+    padding: 1em;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border-radius: 50vw;
+  }
+  .s{
+    color: #E35821;
   }

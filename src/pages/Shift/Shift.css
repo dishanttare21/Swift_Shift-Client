@@ -1,0 +1,12 @@
+.shiftDetails-section{
+    background-color: #253c52;
+    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 5em 0;
+}
+.shiftDetails form{
+    width: 50%;
+    margin: auto;
+    border-radius: 5px;
+}

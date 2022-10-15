@@ -1,38 +1,55 @@
 .shiftDetails{
-    border: 2px solid rgb(215, 215, 215);
-    width: 80%;
+    border: 2px solid #3f678d;
+    width: 50%;
     margin: 1em auto;
     display: flex;
     flex-direction: column;
+    background-color: #3f678d;
+    border-radius: 5px;
+    padding: 2em auto;
+    
+}
+.shiftDetails > div{
+    display: flex;
+    /* border: 2px solid red; */
+    width: 80%;
+    margin: auto;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
 }
 .shiftDetails label, .shiftDetails input{
-    width: 40%;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    margin: auto
+    width: 100%;
+    
+}
+.shiftDetails label{
+   width: 30%;
 }
 .shiftDetails input{
     display: block;
-    border: 1px solid hsl(0, 0%, 85%);
+    border: 1px solid #3f678d;
     border-radius: 5px;
     padding: 1em;
-    transition: all 300ms ease;
+    transition: all 200ms ease;
     outline: none;
-    
+    background: #253c52;
+    /* margin: 1em auto; */
+    color: #fff;
 }
 
 .save-btn {
-    border: 1px solid hsl(0, 0%, 85%);
-    width: 40%;
+    border: none;
+    width: 80%;
     margin: 1em auto;
     padding: 1em;
     cursor: pointer;
-    background: rgb(42, 149, 255);
+    background: #3d91db;
     color: #fff;
     border-radius: 5px;
     font-family: inherit;
 }
 
-.shiftDetails input:hover{
+.shiftDetails input:focus{
     transform: scale(1.01);
 }

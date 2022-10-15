@@ -5,7 +5,9 @@ const Homepage = () => {
   return (
     <div className='homepage'>
         <HeroSection />
-        <ShiftDetails />
+        {/* <section className='shiftDetails-section'>
+          <ShiftDetails />
+        </section> */}
     </div>
   )
 }

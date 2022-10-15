@@ -7,6 +7,7 @@ import { useContext } from 'react';
 import { GoogleLogin } from '@react-oauth/google'
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios'
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const {user,dispatch} = useContext(AuthContext)
@@ -21,12 +22,14 @@ const Navbar = () => {
     <nav className="navbar">
         <div className="navbar-left">
             <img src="/assets/images/SS.png" alt="" className='logo' />
-            {/* <span className='title'>Swift Shift</span> */}
+            <span className='title'>Swift Shift</span>
         </div>
 
         <div className="navbar-center">
             <ul className='navbar-links'>
-               <li className="navbar-link">Home</li>
+               <li className="navbar-link">
+                <Link to="/">Home</Link>
+               </li>
                <li className="navbar-link">Services</li>
                <li className="navbar-link">Contact</li>
                <li className="navbar-link">About</li>
@@ -34,6 +37,14 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-right">
+            {user && (
+               <div className='user-details'>
+                <span>
+                    <img src={user.picture} alt="" />
+                </span>
+                <span>{user.name}</span>
+                </div>
+            )}
             {user == null ?<GoogleLogin
                 onSuccess={credentialResponse => {
                 var decoded = jwt_decode(credentialResponse.credential)
@@ -49,7 +60,7 @@ const Navbar = () => {
             onError={() => {
                 console.log('Login Failed');
             }}/> :
-
+            
             <button className="logout-btn" onClick={logout}>Logout</button>
         }
         </div>

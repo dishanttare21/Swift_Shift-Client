@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Homepage from './pages/Homepage/Homepage';
 import { useContext } from 'react';
+import Shift from './pages/Shift/Shift';
 
 function App() {
   const {user, dispatch} = useContext(AuthContext)
@@ -42,6 +43,7 @@ function App() {
             {/* <Route path="/" element={user ? <Home /> : <Login />} /> */}
             <Route path="/login" element={<GoogleSignIn/>} />
             <Route path="/" element={<Homepage />} />
+            <Route path="/shift" element={<Shift />} />
             {/* <Route path="/profile/:userId" element={user ? <Profile /> : <Login />} /> */}
             <Route path='*' element={<ErrorPage />} />
             <Route path='/pageNotFound' element={<ErrorPage />} />
